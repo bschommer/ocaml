@@ -101,6 +101,11 @@ val concat : 'a list list -> 'a list
 val flatten : 'a list list -> 'a list
 (** An alias for [concat]. *)
 
+val equal : ('a -> 'a -> bool) -> 'a list -> 'a list -> bool
+(** [equal cmp l1 l2] tests whether the lists [l1] and [l2] are
+    equal, that is, contain the same elements in the same order.
+    @since 4.11.0
+*)
 
 (** {1 Iterators} *)
 

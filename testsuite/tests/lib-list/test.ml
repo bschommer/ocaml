@@ -61,6 +61,11 @@ let () =
   assert (
     let f a b = a + b, string_of_int b in
     List.fold_left_map f 0 l = (45, sl));
+  assert (List.equal (=) [] []);
+  assert (List.equal (=) l l);
+  assert (List.equal (=) sl sl);
+  assert (not (List.equal (=) [] l));
+  assert (not (List.equal (=) l (19::l)));
   ()
 ;;
 

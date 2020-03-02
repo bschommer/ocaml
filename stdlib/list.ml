@@ -558,3 +558,9 @@ let of_seq seq =
       | Seq.Cons (x, next) -> x :: direct (depth-1) next
   in
   direct 500 seq
+
+let rec equal cmp l1 l2 =
+  match (l1, l2) with
+  | ([], []) -> true
+  | (a1::l1, a2::l2) -> cmp a1 a2 && equal cmp l1 l2
+  | (_, _) -> false

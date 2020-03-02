@@ -112,6 +112,11 @@ val flatten : 'a list list -> 'a list
 (** Same as [concat].  Not tail-recursive
    (length of the argument + length of the longest sub-list). *)
 
+val equal: f:('a -> 'a -> bool) -> 'a list -> 'a list -> bool
+(** [equal f l1 l2] tests whether the lists [l1] and [l2] are
+    equal, that is, contain the same elements in the same order.
+    @since 4.11.0
+*)
 
 (** {1 Iterators} *)
 
